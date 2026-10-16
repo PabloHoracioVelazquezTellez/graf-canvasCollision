@@ -1,11 +1,133 @@
-body { 
-    display: flex; 
-    justify-content: center; 
-    align-items: center; 
-    height: 100vh; 
-    background-color: #333; 
-} 
- 
-canvas { 
-    border: 2px solid #fff; 
-} 
+
+/* -----------------------------------------
+   CONFIGURACIÓN GENERAL
+----------------------------------------- */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    overflow: hidden;
+    font-family: Arial, Helvetica, sans-serif;
+    background: #0b1020;
+    color: white;
+}
+
+/* -----------------------------------------
+   CANVAS DEL JUEGO
+----------------------------------------- */
+
+canvas {
+    display: block;
+    width: 100vw;
+    height: 100vh;
+    cursor: crosshair;
+}
+
+/* -----------------------------------------
+   PANEL DE PUNTUACIÓN
+----------------------------------------- */
+
+.hud {
+    position: fixed;
+    top: 20px;
+    right: 25px;
+    z-index: 2;
+
+    min-width: 180px;
+    padding: 16px 22px;
+
+    text-align: center;
+
+    border: 1px solid #46557e;
+    border-radius: 14px;
+
+    background: rgba(17, 25, 50, 0.92);
+
+    box-shadow: 0 0 25px rgba(73, 122, 255, 0.2);
+
+    /* Permite hacer clic a través del panel */
+    pointer-events: none;
+}
+
+.hud h1 {
+    margin-bottom: 8px;
+
+    font-size: 16px;
+    letter-spacing: 2px;
+
+    color: #9fbaff;
+}
+
+#score {
+    font-size: 36px;
+    font-weight: bold;
+    color: #ffffff;
+}
+
+#level {
+    margin-top: 6px;
+
+    font-size: 13px;
+    color: #7fffd4;
+}
+
+/* -----------------------------------------
+   INSTRUCCIONES DEL JUEGO
+----------------------------------------- */
+
+.instructions {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    padding: 12px 20px;
+
+    border: 1px solid #354366;
+    border-radius: 12px;
+
+    background: rgba(17, 25, 50, 0.88);
+
+    color: #d5def7;
+    font-size: 14px;
+    text-align: center;
+
+    /* Evita bloquear los clics del juego */
+    pointer-events: none;
+
+    white-space: nowrap;
+}
+
+/* -----------------------------------------
+   DISEÑO PARA PANTALLAS PEQUEÑAS
+----------------------------------------- */
+
+@media (max-width: 500px) {
+    .hud {
+        top: 12px;
+        right: 12px;
+
+        min-width: 140px;
+        padding: 12px;
+    }
+
+    .instructions {
+        bottom: 12px;
+
+        width: calc(100% - 24px);
+
+        white-space: normal;
+        line-height: 1.5;
+    }
+}

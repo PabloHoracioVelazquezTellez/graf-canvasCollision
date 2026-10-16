@@ -1,13 +1,32 @@
-<!DOCTYPE html> 
-<html lang="en"> 
-<head> 
-    <meta charset="UTF-8"> 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-    <title>Colisiones</title> 
-    <link rel="stylesheet" href="style.css"> 
-</head> 
-<body> 
-    <canvas id="canvas" width="800" height="600"></canvas> 
-    <script src="colision.js"></script> 
-</body> 
-</html> 
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Geometry Fall - Juego de reflejos</title>
+
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <canvas id="canvas"></canvas>
+
+    
+    <div class="hud">
+        <h1>GEOMETRY FALL</h1>
+        <div id="score">0</div>
+        <div id="level">Velocidad: normal</div>
+    </div>
+
+    <!-- Instrucciones -->
+    <div class="instructions">
+        Haz clic izquierdo sobre las figuras para eliminarlas.
+    </div>
+
+    <!-- Lógica del juego -->
+    <script src="colision.js"></script>
+</body>
+</html>
